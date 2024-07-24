@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DongHo</title>
+    <link
+      rel="stylesheet"
+      href="./fontawesome-free-6.2.1-web/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="header-logo">
+            <a href="index.html"><img src="images/logo.png" alt="" /></a>
+          </div>
+          <div class="header-nav">
+            <ul class="ul-all">
+              <li>
+                <a href="index.html">Trang chủ</a>
+              </li>
+              <li>
+                <a href="./index.html#about-us">Về chúng tôi</a>
+              </li>
+              <li class="nav-product-list">
+                <a href="product-list-1.html">Sản phẩm</a>
+                <ul class="ul-product-list">
+                  <li><a href="product-list-1.html">G-Shock</a></li>
+                  <li><a href="product-list-1.html">Skagen</a></li>
+                  <li><a href="product-list-1.html">Seiko</a></li>
+                  <li><a href="product-list-1.html">Fosil</a></li>
+                  <li><a href="product-list-1.html">Casio</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="./index.html#contact">Liên hệ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="header-user">
+            <a href="form-login.html">
+              <i class="fa-solid fa-circle-user fa-2xl"></i>
+            </a>
+          </div>
+          <div class="header-cart">
+            <i class="fa-solid fa-cart-arrow-down fa-2xl"></i>
+          </div>
+          <div class="header-like-list">
+            <i class="fa-sharp fa-solid fa-heart fa-2xl"></i>
+          </div>
+          <div class="header-search">
+            <div class="header-search-wrapper">
+              <input type="text" />
+              <button>
+                <svg
+                  width="20"
+                  height="20"
+                  class="DocSearch-Search-Icon"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z"
+                    stroke="currentColor"
+                    fill="none"
+                    fill-rule="evenodd"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main-cart-like">
+        <i id="quit" class="fa-sharp fa-solid fa-circle-xmark fa-2xl"></i>
+        <div class="tab-link">
+          <div class="container">
+            <div class="row">
+              <div class="col-6 tab-cart">
+                <span>Giỏ hàng</span>
+              </div>
+              <div class="col-6 tab-like">
+                <span>Sản phẩm yêu thích</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cart-content content">
+          <form action="">
+            <h2>Giỏ hàng</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Sản phẩm</th>
+                  <th>Giá</th>
+                  <th>Số lượng</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody class="cart-body"></tbody>
+            </table>
+            <div class="total-price">
+              <span>Tổng tiền : </span>
+              <b>0</b>
+            </div>
+            <div onclick="locationCart()" class="buy-now-btn">
+              <div>Mua hàng</div>
+            </div>
+            <div class="empty-cart">
+              <img src="images/cart-empty.png" alt="" />
+            </div>
+          </form>
+        </div>
+        <div class="like-product-content content">
+          <form action="">
+            <h2>Sản phẩm yêu thích</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Sản phẩm</th>
+                  <th>Giá</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody class="like-body"></tbody>
+            </table>
+            <div class="empty-like">
+              <img src="images/Cart-Transparent-PNG.png" alt="" />
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="main-banner">
+        <div class="circle"></div>
+        <img
+          class="banner-img1"
+          src="images/item/longines-the-longines-master-collection-l2-673-4-78-3-2000x2000-1680291333.png"
+          alt=""
+        />
+        <div class="container-fluid banner-wrapper">
+          <div class="row">
+            <div class="col-6 banner-col">
+              <h1>Bộ sưu tập đồng hồ montblanc</h1>
+              <p>
+                Montblanc là một thương hiệu đầy uy tín hiện đang là một phần
+                của tập đoàn cao cấp Richemont.
+              </p>
+              <a href="product-item.html">
+                <div class="add-cart-banner">
+                  <span>Thêm vào giỏ hàng</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 img-banner-col">
+              <img src="images/Montblanc_logo.svg.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product-ads">
+        <div class="container">
+          <div class="ads-item">
+            <div class="row">
+              <div class="col-6 ads-content">
+                <h4>offer of the month</h4>
+                <h2>Tudor</h2>
+                <p>
+                  Được thành lập vào năm 1926, Tudor có lẽ được biết đến nhiều
+                  nhất vì là công ty anh em của Rolex: thương hiệu xa xỉ nổi
+                  tiếng nhất trên toàn thế giới. Người sáng lập của Rolex, Hans
+                  Wilsdorf ban đầu đã tạo ra những chiếc đồng hồ Tudor để trở
+                  thành lựa chọn thay thế hợp lý hơn cho những chiếc do Rolex
+                  sản xuất và hai thương hiệu này có một lịch sử khác thường và
+                  gắn bó với nhau bắt nguồn từ gần một thế kỷ trước những ngày
+                  đầu tiên của tên công ty Tudor.
+                </p>
+                <div class="ads-price">
+                  <del>$1000</del>
+                  <b>$500</b>
+                </div>
+                <a href="product-item.html">
+                  <div class="ads-btn">
+                    <div class="buy-now-btn">Mua ngay</div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 ads-img">
+                <img src="images/wp8824857.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-hot-product">
+        <div class="container">
+          <div class="title-wrapper">
+            <h2 class="main-title">Sản Phẩm Nổi Bật</h2>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <a href="product-item.html">
+                <div class="product-item">
+                  <div class="product-image">
+                    <img src="images/sanpham/sanpham1.jpg" alt="" />
+                  </div>
+                  <div class="product-description">
+                    <h3>Đồng Hồ Nam Venezianico Nereide 42 – 3321506</h3>
+                    <div class="product-price">
+                      <del>5500000</del>
+                      <b>5000000</b>
+                    </div>
+                    <div class="product-add-cart">
+                      <a href="product-buy-now.html">
+                        <div class="product-buy-now-btn product-btn">
+                          Mua ngay
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div
+                          onclick="addArray(this)"
+                          class="product-add-cart-btn product-btn"
+                        >
+                          <img
+                            src="images/icons8-shopping-cart-30.png"
+                            alt=""
+                          />
+                          <span>Thêm vào giỏ hàng</span>
+                        </div>
+                        <i
+                          onclick="addLike(this)"
+                          class="fa-solid fa-heart-circle-plus fa-2xl"
+                        ></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-4">
+              <a href="product-item.html">
+                <div class="product-item">
+                  <div class="product-image">
+                    <img src="images/sanpham/sanpham2.jpg" alt="" />
+                  </div>
+                  <div class="product-description">
+                    <h3>Đồng Hồ Nam Venezianico Nereide 42 – 3321506</h3>
+                    <div class="product-price">
+                      <del>4500000</del>
+                      <b>3000000</b>
+                    </div>
+                    <div class="product-add-cart">
+                      <a href="product-buy-now.html">
+                        <div class="product-buy-now-btn product-btn">
+                          Mua ngay
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div
+                          onclick="addArray(this)"
+                          class="product-add-cart-btn product-btn"
+                        >
+                          <img
+                            src="images/icons8-shopping-cart-30.png"
+                            alt=""
+                          />
+                          <span>Thêm vào giỏ hàng</span>
+                        </div>
+                        <i
+                          onclick="addLike(this)"
+                          class="fa-solid fa-heart-circle-plus fa-2xl"
+                        ></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-4">
+              <a href="product-item.html">
+                <div class="product-item">
+                  <div class="product-image">
+                    <img src="images/sanpham/sanpham3.jpg" alt="" />
+                  </div>
+                  <div class="product-description">
+                    <h3>Đồng Hồ Nam Venezianico Nereide 42 – 3321506</h3>
+                    <div class="product-price">
+                      <del>2500000</del>
+                      <b>2000000</b>
+                    </div>
+                    <div class="product-add-cart">
+                      <a href="product-buy-now.html">
+                        <div class="product-buy-now-btn product-btn">
+                          Mua ngay
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div
+                          onclick="addArray(this)"
+                          class="product-add-cart-btn product-btn"
+                        >
+                          <img
+                            src="images/icons8-shopping-cart-30.png"
+                            alt=""
+                          />
+                          <span>Thêm vào giỏ hàng</span>
+                        </div>
+                        <i
+                          onclick="addLike(this)"
+                          class="fa-solid fa-heart-circle-plus fa-2xl"
+                        ></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-4">
+              <a href="product-item.html">
+                <div class="product-item">
+                  <div class="product-image">
+                    <img src="images/sanpham/sanpham4.jpg" alt="" />
+                  </div>
+                  <div class="product-description">
+                    <h3>Đồng Hồ Nam Venezianico Nereide 42 – 3321506</h3>
+                    <div class="product-price">
+                      <del>5500000</del>
+                      <b>5000000</b>
+                    </div>
+                    <div class="product-add-cart">
+                      <a href="product-buy-now.html">
+                        <div class="product-buy-now-btn product-btn">
+                          Mua ngay
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div
+                          onclick="addArray(this)"
+                          class="product-add-cart-btn product-btn"
+                        >
+                          <img
+                            src="images/icons8-shopping-cart-30.png"
+                            alt=""
+                          />
+                          <span>Thêm vào giỏ hàng</span>
+                        </div>
+                        <i
+                          onclick="addLike(this)"
+                          class="fa-solid fa-heart-circle-plus fa-2xl"
+                        ></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-4">
+              <a href="product-item.html">
+                <div class="product-item">
+                  <div class="product-image">
+                    <img src="images/sanpham/sanpham5.jpg" alt="" />
+                  </div>
+                  <div class="product-description">
+                    <h3>Đồng Hồ Nam Venezianico Nereide 42 – 3321506</h3>
+                    <div class="product-price">
+                      <del>4799000</del>
+                      <b>4000000</b>
+                    </div>
+                    <div class="product-add-cart">
+                      <a href="product-buy-now.html">
+                        <div class="product-buy-now-btn product-btn">
+                          Mua ngay
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div
+                          onclick="addArray(this)"
+                          class="product-add-cart-btn product-btn"
+                        >
+                          <img
+                            src="images/icons8-shopping-cart-30.png"
+                            alt=""
+                          />
+                          <span>Thêm vào giỏ hàng</span>
+                        </div>
+                        <i
+                          onclick="addLike(this)"
+                          class="fa-solid fa-heart-circle-plus fa-2xl"
+                        ></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-4">
+              <a href="product-item.html">
+                <div class="product-item">
+                  <div class="product-image">
+                    <img src="images/sanpham/sanpham6.jpg" alt="" />
+                  </div>
+                  <div class="product-description">
+                    <h3>Đồng Hồ Nam Venezianico Nereide 42 – 3321506</h3>
+                    <div class="product-price">
+                      <del>5000000</del>
+                      <b>4500000</b>
+                    </div>
+                    <div class="product-add-cart">
+                      <a href="product-buy-now.html">
+                        <div class="product-buy-now-btn product-btn">
+                          Mua ngay
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div
+                          onclick="addArray(this)"
+                          class="product-add-cart-btn product-btn"
+                        >
+                          <img
+                            src="images/icons8-shopping-cart-30.png"
+                            alt=""
+                          />
+                          <span>Thêm vào giỏ hàng</span>
+                        </div>
+                        <i
+                          onclick="addLike(this)"
+                          class="fa-solid fa-heart-circle-plus fa-2xl"
+                        ></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-hot-news">
+        <div class="container">
+          <div class="title-wrapper">
+            <h2 class="main-title">Tin Tức</h2>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <div class="news">
+                <div class="news-image">
+                  <img
+                    src="https://luxewatch.vn/wp-content/uploads/2018/04/high-end-watches.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="news-description">
+                  <h3>
+                    Đồng hồ Meccaniche Veneziane Arsenale: Mang cả tinh thần
+                    Venice trên cổ tay
+                  </h3>
+                  <div class="news-time">
+                    <time>05/03/2023</time>
+                  </div>
+                  <div class="news-text">
+                    <p>
+                      Mạnh mẽ và khoáng đạt, những chiếc đồng hồ Arsenale của
+                      Meccaniche Veneziane giống như những pháo đài trên cổ tay,
+                      tái hiện lại một biểu tượng của nước Ý…
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="news">
+                <div class="news-image">
+                  <img
+                    src="https://luxewatch.vn/wp-content/uploads/num-dong-ho-la-gi.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="news-description">
+                  <h3>
+                    Đồng hồ Meccaniche Veneziane Arsenale: Mang cả tinh thần
+                    Venice trên cổ tay
+                  </h3>
+                  <div class="news-time">
+                    <time>05/03/2023</time>
+                  </div>
+                  <div class="news-text">
+                    <p>
+                      Mạnh mẽ và khoáng đạt, những chiếc đồng hồ Arsenale của
+                      Meccaniche Veneziane giống như những pháo đài trên cổ tay,
+                      tái hiện lại một biểu tượng của nước Ý…
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="news">
+                <div class="news-image">
+                  <img
+                    src="https://luxewatch.vn/wp-content/uploads/muc-chiu-nuoc-dong-ho.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="news-description">
+                  <h3>
+                    Đồng hồ Meccaniche Veneziane Arsenale: Mang cả tinh thần
+                    Venice trên cổ tay
+                  </h3>
+                  <div class="news-time">
+                    <time>05/03/2023</time>
+                  </div>
+                  <div class="news-text">
+                    <p>
+                      Mạnh mẽ và khoáng đạt, những chiếc đồng hồ Arsenale của
+                      Meccaniche Veneziane giống như những pháo đài trên cổ tay,
+                      tái hiện lại một biểu tượng của nước Ý…
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="news">
+                <div class="news-image">
+                  <img
+                    src="https://luxewatch.vn/wp-content/uploads/tinh-nang-chronograph-la-gi.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="news-description">
+                  <h3>
+                    Đồng hồ Meccaniche Veneziane Arsenale: Mang cả tinh thần
+                    Venice trên cổ tay
+                  </h3>
+                  <div class="news-time">
+                    <time>05/03/2023</time>
+                  </div>
+                  <div class="news-text">
+                    <p>
+                      Mạnh mẽ và khoáng đạt, những chiếc đồng hồ Arsenale của
+                      Meccaniche Veneziane giống như những pháo đài trên cổ tay,
+                      tái hiện lại một biểu tượng của nước Ý…
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="news">
+                <div class="news-image">
+                  <img
+                    src="https://luxewatch.vn/wp-content/uploads/chuan-chronometer-la-gi.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="news-description">
+                  <h3>
+                    Đồng hồ Meccaniche Veneziane Arsenale: Mang cả tinh thần
+                    Venice trên cổ tay
+                  </h3>
+                  <div class="news-time">
+                    <time>05/03/2023</time>
+                  </div>
+                  <div class="news-text">
+                    <p>
+                      Mạnh mẽ và khoáng đạt, những chiếc đồng hồ Arsenale của
+                      Meccaniche Veneziane giống như những pháo đài trên cổ tay,
+                      tái hiện lại một biểu tượng của nước Ý…
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="news">
+                <div class="news-image">
+                  <img
+                    src="https://luxewatch.vn/wp-content/uploads/tourbillon-la-gi.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="news-description">
+                  <h3>
+                    Đồng hồ Meccaniche Veneziane Arsenale: Mang cả tinh thần
+                    Venice trên cổ tay
+                  </h3>
+                  <div class="news-time">
+                    <time>05/03/2023</time>
+                  </div>
+                  <div class="news-text">
+                    <p>
+                      Mạnh mẽ và khoáng đạt, những chiếc đồng hồ Arsenale của
+                      Meccaniche Veneziane giống như những pháo đài trên cổ tay,
+                      tái hiện lại một biểu tượng của nước Ý…
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="news">
+                <div class="news-image">
+                  <img
+                    src="https://luxewatch.vn/wp-content/uploads/2018/04/dsc0621_2.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="news-description">
+                  <h3>Mua Đồng Hồ Chính Hãng – Tưởng Khó Mà Dễ</h3>
+                  <div class="news-time">
+                    <time>05/03/2023</time>
+                  </div>
+                  <div class="news-text">
+                    <p>
+                      Mạnh mẽ và khoáng đạt, những chiếc đồng hồ Arsenale của
+                      Meccaniche Veneziane giống như những pháo đài trên cổ tay,
+                      tái hiện lại một biểu tượng của nước Ý…
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="news">
+                <div class="news-image">
+                  <img
+                    src="https://luxewatch.vn/wp-content/uploads/2020/09/8aa74d44fbe6e839fc06594d1c1d89a7_original.jpeg"
+                    alt=""
+                  />
+                </div>
+                <div class="news-description">
+                  <h3>Bảng Xếp Hạng Các Thương Hiệu Đồng Hồ</h3>
+                  <div class="news-time">
+                    <time>20/04/2018</time>
+                  </div>
+                  <div class="news-text">
+                    <p>
+                      Mạnh mẽ và khoáng đạt, những chiếc đồng hồ Arsenale của
+                      Meccaniche Veneziane giống như những pháo đài trên cổ tay,
+                      tái hiện lại một biểu tượng của nước Ý…
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-testimonial">
+        <div class="container">
+          <div class="title-wrapper">
+            <h2 class="main-title">Cảm nhận khách hàng</h2>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <div class="customer">
+                <div class="customer-image">
+                  <img
+                    src="https://luxewatch.vn/wp-content/uploads/2018/03/53525796_644460662676945_9130067553136148480_n.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="customer-description">
+                  <h3 class="customer-name">nguyễn mạnh hùng</h3>
+                  <div class="customer-cmt">
+                    <p>Mình nhận đồng hồ rất ưng ý nhé, đẹp lắm ạ</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="customer">
+                <div class="customer-image">
+                  <img
+                    src="https://luxewatch.vn/wp-content/uploads/2018/03/26240048_2068888089992767_3232039795964392366_o.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="customer-description">
+                  <h3 class="customer-name">nguyễn mạnh B</h3>
+                  <div class="customer-cmt">
+                    <p>Mình nhận đồng hồ rất ưng ý nhé</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="customer">
+                <div class="customer-image">
+                  <img
+                    src="https://luxewatch.vn/wp-content/uploads/2018/03/29695418_1138785506264682_1472953413403292111_n.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="customer-description">
+                  <h3 class="customer-name">nguyễn mạnh An</h3>
+                  <div class="customer-cmt">
+                    <p>
+                      Nhân viên của shop rất nhiệt tình, đồng hồ mình đặt thì
+                      ưng ý lắm rồi
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="customer">
+                <div class="customer-image">
+                  <img
+                    src="https://luxewatch.vn/wp-content/uploads/2018/03/10653732_695323030572074_8725238594521361368_n.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="customer-description">
+                  <h3 class="customer-name">Đào Anh Khoa</h3>
+                  <div class="customer-cmt">
+                    <p>
+                      Đặt hàng được kiểm tra hàng trước khi thanh toán là mình
+                      rất yên tâm, shop làm ăn rất uy tín, sẽ ủng hộ shop dài
+                      dài
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-us" id="about-us">
+        <div class="container">
+          <div class="about-us-content">
+            <div class="row">
+              <div class="col-6">
+                <img src="images/gioithieu.jpg" alt="" />
+              </div>
+              <div class="col-6 content-col">
+                <h3>Về chúng tôi</h3>
+                <p>
+                  Được thành lập vào những ngày cuối cùng của năm 1991, Đồng Hồ
+                  DongHo đã tồn tại và phát triển đến ngày nay và đang dần vươn
+                  lên trở thành 1 trong những chuỗi bán lẻ đồng hồ hàng đầu ở
+                  Việt Nam.
+                </p>
+                <p>
+                  Cùng với tiêu chí luôn đề cao những giá trị cao nhất cho khách
+                  hàng, DongHo không chỉ mang đến những phiên bản đồng hồ chính
+                  hãng với chất lượng tốt nhất, mà còn mang lại sự an tâm, tin
+                  cậy dành cho Quý khách hàng.
+                </p>
+              </div>
+              <div class="col-12 author-col">
+                <h2>Tác Giả</h2>
+                <div class="author-block">
+                  <div class="author">
+                    <div class="author-card">
+                      <div class="author-img">
+                        <img
+                          src="images/tyler-henry-reading-hollywood-medium-1551978559.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="author-inf">
+                        <h3>Vũ Trường Giang</h3>
+                        <span>Giám đốc điều hành</span>
+                      </div>
+                      <div class="author-link">
+                        <a href="">
+                          <i
+                            class="fa-brands fa-facebook fa-xl"
+                            style="color: #ffffff"
+                          ></i>
+                        </a>
+                        <a href="">
+                          <i
+                            class="fa-brands fa-instagram fa-xl"
+                            style="color: #ffffff"
+                          ></i>
+                        </a>
+                        <a href="">
+                          <i
+                            class="fa-brands fa-youtube fa-xl"
+                            style="color: #ffffff"
+                          ></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="author">
+                    <div class="author-card">
+                      <div class="author-img">
+                        <img
+                          src="images/3021752-inline-i-1-why-square-designed-its-new-offices-to-work-like-a-city.webp"
+                          alt=""
+                        />
+                      </div>
+                      <div class="author-inf">
+                        <h3>Triệu Vỹ Khang</h3>
+                        <span>Giám đốc ý tưởng</span>
+                      </div>
+                      <div class="author-link">
+                        <a href="">
+                          <i
+                            class="fa-brands fa-facebook fa-xl"
+                            style="color: #ffffff"
+                          ></i>
+                        </a>
+                        <a href="">
+                          <i
+                            class="fa-brands fa-instagram fa-xl"
+                            style="color: #ffffff"
+                          ></i>
+                        </a>
+                        <a href="">
+                          <i
+                            class="fa-brands fa-youtube fa-xl"
+                            style="color: #ffffff"
+                          ></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact" id="contact">
+        <div class="container">
+          <div class="title-wrapper">
+            <h2 class="main-title">Liên hệ với chúng tôi</h2>
+          </div>
+          <div class="contact-box">
+            <input
+              type="text"
+              placeholder="Gửi vấn đề cần hỗ trợ của bạn tại đây"
+            />
+            <button>Gửi</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-3 footer-col">
+            <p>Chăm sóc khách hàng</p>
+            <ul>
+              <li><a href="">Trung Tâm Trợ Giúp</a></li>
+              <li><a href="">Hướng Dẫn Mua Hàng</a></li>
+              <li><a href="">Thanh Toán</a></li>
+              <li><a href="">Chăm Sóc Khách Hàng</a></li>
+              <li><a href="">Chính Sách Bảo Hành</a></li>
+            </ul>
+          </div>
+          <div class="col-3 footer-col">
+            <p>Về DongHo</p>
+            <ul>
+              <li><a href="">Kênh Người Bán</a></li>
+              <li><a href="">Chính Sách Bảo Mật</a></li>
+              <li><a href="">Chính Hãng</a></li>
+              <li><a href="">Điều Khoản DongHo</a></li>
+            </ul>
+          </div>
+          <div class="col-3 footer-col">
+            <p>Theo dõi chúng tôi trên</p>
+            <div class="row">
+              <div class="col-2">
+                <a href="">
+                  <i class="fa-brands fa-instagram fa-2xl"></i>
+                </a>
+              </div>
+              <div class="col-2">
+                <a href="">
+                  <i class="fa-brands fa-facebook fa-2xl"></i>
+                </a>
+              </div>
+              <div class="col-2">
+                <a href="">
+                  <i class="fa-brands fa-youtube fa-2xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>

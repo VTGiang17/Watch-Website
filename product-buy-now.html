@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DongHo</title>
+    <link
+      rel="stylesheet"
+      href="./fontawesome-free-6.2.1-web/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="header-logo">
+            <a href="index.html"><img src="images/logo.png" alt="" /></a>
+          </div>
+          <div class="header-nav">
+            <ul class="ul-all">
+              <li>
+                <a href="index.html">Trang chủ</a>
+              </li>
+              <li>
+                <a href="./index.html#about-us">Về chúng tôi</a>
+              </li>
+              <li class="nav-product-list">
+                <a href="product-list-1.html">Sản phẩm</a>
+                <ul class="ul-product-list">
+                  <li><a href="product-list-1.html">G-Shock</a></li>
+                  <li><a href="product-list-1.html">Skagen</a></li>
+                  <li><a href="product-list-1.html">Seiko</a></li>
+                  <li><a href="product-list-1.html">Fosil</a></li>
+                  <li><a href="product-list-1.html">Casio</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="./index.html#contact">Liên hệ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="header-user">
+            <a href="form-login.html">
+              <i class="fa-solid fa-circle-user fa-2xl"></i>
+            </a>
+          </div>
+          <div class="header-cart">
+            <i class="fa-solid fa-cart-arrow-down fa-2xl"></i>
+          </div>
+          <div class="header-like-list">
+            <i class="fa-sharp fa-solid fa-heart fa-2xl"></i>
+          </div>
+          <div class="header-search">
+            <div class="header-search-wrapper">
+              <input type="text" />
+              <button>
+                <svg
+                  width="20"
+                  height="20"
+                  class="DocSearch-Search-Icon"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z"
+                    stroke="currentColor"
+                    fill="none"
+                    fill-rule="evenodd"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main-cart-like">
+        <i id="quit" class="fa-sharp fa-solid fa-circle-xmark fa-2xl"></i>
+        <div class="tab-link">
+          <div class="container">
+            <div class="row">
+              <div class="col-6 tab-cart">
+                <span>Giỏ hàng</span>
+              </div>
+              <div class="col-6 tab-like">
+                <span>Sản phẩm yêu thích</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cart-content content">
+          <form action="">
+            <h2>Giỏ hàng</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Sản phẩm</th>
+                  <th>Giá</th>
+                  <th>Số lượng</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody class="cart-body"></tbody>
+            </table>
+            <div class="total-price">
+              <span>Tổng tiền : </span>
+              <b>0</b>
+            </div>
+            <div onclick="locationCart()" class="buy-now-btn">
+              <div>Mua hàng</div>
+            </div>
+            <div class="empty-cart">
+              <img src="images/cart-empty.png" alt="" />
+            </div>
+          </form>
+        </div>
+        <div class="like-product-content content">
+          <form action="">
+            <h2>Sản phẩm yêu thích</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Sản phẩm</th>
+                  <th>Giá</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody class="like-body"></tbody>
+            </table>
+            <div class="empty-like">
+              <img src="images/Cart-Transparent-PNG.png" alt="" />
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="main-buy-now">
+        <div class="container buy-now-wrapper">
+          <h2>Thông Tin mua hàng</h2>
+          <form action="" class="form-buy-now">
+            <div class="buy-now-inp">
+              <input type="email" placeholder="Email" />
+            </div>
+            <div class="buy-now-inp">
+              <input type="text" placeholder="Số điện thoại" />
+            </div>
+            <div class="inp-name">
+              <div class="buy-now-inp">
+                <input type="text" placeholder="Tên" />
+              </div>
+              <div class="buy-now-inp">
+                <input type="text" placeholder="Họ" />
+              </div>
+            </div>
+            <div class="buy-now-inp">
+              <input type="text" placeholder="Địa chỉ" />
+            </div>
+            <div class="buy-now-inp">
+              <select name="" id="city">
+                <option value="1">Sài Gòn</option>
+                <option value="2">Hà Nội</option>
+              </select>
+            </div>
+            <div class="buy-now-inp">
+              <button class="buy-now-btn">Mua hàng</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-3 footer-col">
+            <p>Chăm sóc khách hàng</p>
+            <ul>
+              <li><a href="">Trung Tâm Trợ Giúp</a></li>
+              <li><a href="">Hướng Dẫn Mua Hàng</a></li>
+              <li><a href="">Thanh Toán</a></li>
+              <li><a href="">Chăm Sóc Khách Hàng</a></li>
+              <li><a href="">Chính Sách Bảo Hành</a></li>
+            </ul>
+          </div>
+          <div class="col-3 footer-col">
+            <p>Về DongHo</p>
+            <ul>
+              <li><a href="">Kênh Người Bán</a></li>
+              <li><a href="">Chính Sách Bảo Mật</a></li>
+              <li><a href="">Chính Hãng</a></li>
+              <li><a href="">Điều Khoản DongHo</a></li>
+            </ul>
+          </div>
+          <div class="col-3 footer-col">
+            <p>Theo dõi chúng tôi trên</p>
+            <div class="row">
+              <div class="col-2">
+                <a href="">
+                  <i class="fa-brands fa-instagram fa-2xl"></i>
+                </a>
+              </div>
+              <div class="col-2">
+                <a href="">
+                  <i class="fa-brands fa-facebook fa-2xl"></i>
+                </a>
+              </div>
+              <div class="col-2">
+                <a href="">
+                  <i class="fa-brands fa-youtube fa-2xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
